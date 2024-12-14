@@ -1067,7 +1067,7 @@ button:hover{
   #CLASS
 \*-----------------------------------*/
 
-.class { padding-block-start: calc(var(--section-padding) + 250px); }
+.class { padding-block-start: calc(var(--section-padding) + 25px); }
 
 .class .section-subtitle { margin-inline: auto; }
 
@@ -1157,16 +1157,21 @@ button:hover{
   margin-bottom: 20px;
   }
   .isi {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    justify-content: center;
+    font-size: 24px;
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding-block-end: 30px;
+    scroll-snap-type: inline mandatory;
   }
   .box {
-  background-color: #fdece8;
-  padding: 20px;
-  border-radius: 10px;
-  width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fdece8;
+    padding: 25px;
+    border-radius: 10px;
+    width: 344px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-inline: 8px;
   }
   .box h3 {
   background-color: black;
@@ -1297,6 +1302,7 @@ button:hover{
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .pay-button:hover {

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,7 +105,7 @@
 
       <p class="section-subtitle">Kelas</p>
 
-      <h2 class="h2 section-title text-center">Temukan kelas favoritmu dan rasakan semangat baru setiap sesi</h2>
+      <h2 class="h2 section-title text-center">Silahkan Pilih Program</h2>
 
       <ul class="class-list has-scrollbar">
 
@@ -112,7 +113,7 @@
           <div class="class-card">
 
             <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-              <img src="../assets/images/class-1.jpg" width="416" height="240" loading="lazy" alt="Weight Lifting"
+              <img src="Strenght.jpg" width="416" height="240" loading="lazy" alt="Weight Lifting"
                 class="img-cover">
             </figure>
 
@@ -128,8 +129,8 @@
               </div>
 
               <p class="card-text">
-                Latihan angkat beban yang fokus pada peningkatan kekuatan otot melalui pengangkatan beban berat. Terdiri
-                dari powerlifting dan Olympic weightlifting, bertujuan untuk membangun massa otot dan kekuatan maksimal.
+              Latihan angkat beban yang fokus pada peningkatan kekuatan dan massa otot. Terdiri
+              dari powerlifting dan Olympic weightlifting, bertujuan untuk membangun massa otot dan kekuatan maksimal.
               </p>
 
               <div class="card-progress">
@@ -155,7 +156,7 @@
           <div class="class-card">
 
             <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-              <img src="../assets/images/class-2.jpg" width="416" height="240" loading="lazy" alt="Cardio & Strenght"
+              <img src="cardio.jpg" width="416" height="240" loading="lazy" alt="Cardio & Strenght"
                 class="img-cover">
             </figure>
 
@@ -198,7 +199,7 @@
           <div class="class-card">
 
             <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-              <img src="../assets/images/class-3.jpg" width="416" height="240" loading="lazy" alt="Power Yoga"
+              <img src="Aesthetic.jpg" width="416" height="240" loading="lazy" alt="Power Yoga"
                 class="img-cover">
             </figure>
 
@@ -259,7 +260,7 @@
 
 
   <section class="langganan">
-    <div class="title">PERIODE LANGGANAN</div>
+    <div class="title">Silahkan Pilih Periode Langganan</div>
     <div class="isi">
       <div class="box">
         <h3>HARIAN</h3>
@@ -268,8 +269,13 @@
       </div>
       <div class="box">
         <h3>BULANAN</h3>
-        <p class="special">Spesial!!</p>
+        <p class="special">Diskon Akhir Bulan!</p>
         <p><span class="price">Rp120.000,00</span></p>
+      </div>
+      <div class="box">
+        <h3>TAHUNAN</h3>
+        <p class="special">Diskon Awal Tahun!</p>
+        <p><span class="price">Rp1.120.000,00</span></p>
       </div>
     </div>
   </section>
@@ -282,17 +288,17 @@
     style="background-image: url('./assets/images/classes-bg.png')">
     <div class="container">
 
-      <p class="section-subtitle">Kelas</p>
+      <p class="section-subtitle">Trainer</p>
 
-      <h2 class="h2 section-title text-center">Temukan kelas favoritmu dan rasakan semangat baru setiap sesi</h2>
+      <h2 class="h2 section-title text-center">Silahkan Pilih Trainer</h2>
 
       <ul class="class-list has-scrollbar">
-
+<!-- Trainer 1 -->
         <li class="scrollbar-item">
           <div class="class-card">
 
-            <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-              <img src="../assets/images/class-1.jpg" width="416" height="240" loading="lazy" alt="Weight Lifting"
+            <figure class="card-banner img-holder" style="--width: 160; --height: 240;">
+              <img src="trainer1.jpg" width="416" height="240" loading="lazy" alt="Weight Lifting"
                 class="img-cover">
             </figure>
 
@@ -303,13 +309,12 @@
                   class="title-icon">
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Angkat Beban</a>
+                  <a href="#" class="card-title">Trainer 1</a>
                 </h3>
               </div>
 
               <p class="card-text">
-                Latihan angkat beban yang fokus pada peningkatan kekuatan otot melalui pengangkatan beban berat. Terdiri
-                dari powerlifting dan Olympic weightlifting, bertujuan untuk membangun massa otot dan kekuatan maksimal.
+                Trainer Program Angkat Beban
               </p>
 
               <div class="card-progress">
@@ -330,12 +335,12 @@
 
           </div>
         </li>
-
+<!-- Trainer 2 -->
         <li class="scrollbar-item">
           <div class="class-card">
 
-            <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-              <img src="../assets/images/class-2.jpg" width="416" height="240" loading="lazy" alt="Cardio & Strenght"
+            <figure class="card-banner img-holder" style="--width: 160; --height: 240;">
+              <img src="trainer2.jpg" width="416" height="240" loading="lazy" alt="Cardio & Strenght"
                 class="img-cover">
             </figure>
 
@@ -346,13 +351,12 @@
                   class="title-icon">
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Cardio</a>
+                  <a href="#" class="card-title">Trainer 2</a>
                 </h3>
               </div>
 
               <p class="card-text">
-                Latihan kardiovaskular yang meningkatkan kesehatan jantung dan paru-paru. Contohnya termasuk lari,
-                bersepeda, dan aerobik, dengan fokus pada pembakaran kalori dan peningkatan daya tahan tubuh.
+              Trainer Program Angkat Beban
               </p>
 
               <div class="card-progress">
@@ -373,12 +377,12 @@
 
           </div>
         </li>
-
+<!-- trainer 3 -->
         <li class="scrollbar-item">
           <div class="class-card">
 
-            <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-              <img src="../assets/images/class-3.jpg" width="416" height="240" loading="lazy" alt="Power Yoga"
+            <figure class="card-banner img-holder" style="--width: 160; --height: 240;">
+              <img src="trainer3.jpg" width="416" height="240" loading="lazy" alt="Power Yoga"
                 class="img-cover">
             </figure>
 
@@ -389,13 +393,12 @@
                   class="title-icon">
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Aesthetic</a>
+                  <a href="#" class="card-title">Trainer 3</a>
                 </h3>
               </div>
 
               <p class="card-text">
-                Latihan yang berfokus pada penampilan fisik dan proporsi tubuh. Termasuk bodybuilding dan latihan
-                fungsional, bertujuan untuk membentuk otot agar terlihat lebih simetris dan menarik secara visual.
+              Trainer Program Kardio
               </p>
 
               <div class="card-progress">
@@ -417,27 +420,70 @@
           </div>
         </li>
 
-        <!-- <li class="scrollbar-item">
+<!-- trainer 4 -->
+        <li class="scrollbar-item">
+          <div class="class-card">
+
+            <figure class="card-banner img-holder" style="--width: 160; --height: 240;">
+              <img src="trainer4.jpg" width="416" height="240" loading="lazy" alt="Weight Lifting"
+                class="img-cover">
+            </figure>
+
+            <div class="card-content">
+
+              <div class="title-wrapper">
+                <img src="../assets/images/class-icon-1.png" width="52" height="52" aria-hidden="true" alt=""
+                  class="title-icon">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Trainer 4</a>
+                </h3>
+              </div>
+
+              <p class="card-text">
+              Trainer Program Kardio
+              </p>
+
+              <div class="card-progress">
+
+                <div class="progress-wrapper">
+                  <p class="progress-label">Kelas Tersedia</p>
+
+                  <span class="progress-value">85%</span>
+                </div>
+
+                <div class="progress-bg">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+<!-- trainer 5 -->
+        <li class="scrollbar-item">
               <div class="class-card">
 
-                <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
-                  <img src="./assets/images/class-4.jpg" width="416" height="240" loading="lazy" alt="The Fitness Pack"
+                <figure class="card-banner img-holder" style="--width: 160; --height: 240;">
+                  <img src="trainer55.jpg" width="416" height="240" loading="lazy" alt="The Fitness Pack"
                     class="img-cover">
                 </figure>
 
                 <div class="card-content">
 
                   <div class="title-wrapper">
-                    <img src="./assets/images/class-icon-4.png" width="52" height="52" aria-hidden="true" alt=""
+                    <img src="../assets/images/class-icon-4.png" width="52" height="52" aria-hidden="true" alt=""
                       class="title-icon">
 
                     <h3 class="h3">
-                      <a href="#" class="card-title">The Fitness Pack</a>
+                      <a href="#" class="card-title">Trainer 5</a>
                     </h3>
                   </div>
 
                   <p class="card-text">
-                    Suspendisse nisi libero, cursus ac magna sit amet, fermentum imperdiet nisi.
+                  Trainer Program Aesthetic
                   </p>
 
                   <div class="card-progress">
@@ -457,7 +503,50 @@
                 </div>
 
               </div>
-            </li> -->
+            </li>
+
+            <!-- trainer 6 -->
+            <li class="scrollbar-item">
+              <div class="class-card">
+
+                <figure class="card-banner img-holder" style="--width: 160; --height: 240;">
+                  <img src="trainer66.jpg" width="416" height="240" loading="lazy" alt="The Fitness Pack"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="title-wrapper">
+                    <img src="../assets/images/class-icon-4.png" width="52" height="52" aria-hidden="true" alt=""
+                      class="title-icon">
+
+                    <h3 class="h3">
+                      <a href="#" class="card-title">Trainer 6</a>
+                    </h3>
+                  </div>
+
+                  <p class="card-text">
+                  Trainer Program Aesthetic
+                  </p>
+
+                  <div class="card-progress">
+
+                    <div class="progress-wrapper">
+                      <p class="progress-label">Class Full</p>
+
+                      <span class="progress-value">60%</span>
+                    </div>
+
+                    <div class="progress-bg">
+                      <div class="progress-bar" style="width: 60%"></div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
 
       </ul>
 
@@ -473,7 +562,7 @@
 
 
 
-  <div class="content-container">
+  <!-- <div class="content-container">
        
 
        <section class="payment-confirmation">
@@ -515,11 +604,12 @@
                        <span class="label">Total Pembayaran</span>
                        <span class="value">Rp 120.000</span>
                    </div>
-               </div>
-               <button type="submit" class="pay-button">Cepatkan bayar 🤑🤑🤑</button>
-           </form>
+               </div> -->
+               <a href="../bayar/bayar.html" class="pay-button">Konfirmasi Pembayaran</a>
+
+           <!-- </form>
        </section>
-   </div>
+   </div> -->
 
 
 
