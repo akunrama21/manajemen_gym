@@ -128,16 +128,24 @@ $nama = $_SESSION['nama'];
     if ($row) {
       ?>
       <span class="title">Nama</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($nama); ?></span><br>
+<span style="position: relative;
+    top: -32px;
+    font-size: 19px;"><?php echo htmlspecialchars($nama); ?></span><br>
 
 <span class="title">Program</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($row["Nama_Program"]); ?></span><br>
+<span style="position: relative;
+    top: -32px;
+    font-size: 19px;"><?php echo htmlspecialchars($row["Nama_Program"]); ?></span><br>
 
 <span class="title">Paket Langganan</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($row["Jenis_Periode"]); ?></span><br>
+<span style="position: relative;
+    top: -32px;
+    font-size: 19px;"><?php echo htmlspecialchars($row["Jenis_Periode"]); ?></span><br>
 
 <span class="title">Trainer</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($row["Nama_Trainer"]); ?></span><br>
+<span style="position: relative;
+    top: -32px;
+    font-size: 19px;"><?php echo htmlspecialchars($row["Nama_Trainer"]); ?></span><br>
     <?php
     } else {
       echo "Tidak ada data ditemukan.";

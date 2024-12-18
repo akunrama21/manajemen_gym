@@ -304,12 +304,15 @@
 .payment-confirmation {
     padding: 20px;
     text-align: center;
+    background-color: #fd3d0d;
+    border-radius: 22px;
 }
 
 .payment-confirmation h1 {
     font-size: 20px;
-    color: #f15a24;
+    color: white;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .details {
@@ -322,6 +325,7 @@
     padding-left: 0px;
     padding-right: 205px;
     margin-right: 11px;
+    color: black;
 }
 
 .row {

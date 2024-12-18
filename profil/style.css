@@ -314,14 +314,14 @@ body{
 .box {
   padding: 20px;
   border-radius: 10px;
-  width: 300px;
+  width: 640px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .box-dark {
   background-color: #111;
   color: #fff;
-  margin-bottom: 15px; /* Beri jarak ke box bawah */
+  margin-bottom: 0px; /* Beri jarak ke box bawah */
 
 }
 .box-dark span {
@@ -330,43 +330,48 @@ body{
   color: #ccc;
 }
 .box-dark .title {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #333;
-  padding: 10px 0;
-  color: red;
-  font-weight: bold;
+  display: flex
+  ;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+      padding: 0px 0;
+      color: red;
+      font-weight: bold;
+      font-size: 19px;
 }
 
 .box-light {
   background-color: #ff3b00; /* Warna oranye */
   color: #fff;
   text-align: center;
-  width: 140px;
+  width: 310px;
 }
 
 .box-light .title {
-  font-size: 16;
+  font-size: 28px;
   margin: 5px 0;
   font-weight: normal;
 }
 
 .box-light .status {
-  font-size: 1.8rem;
+  font-size: 4.8rem;
   font-weight: bold;
   margin: 10px 0;
   color: #33ff33;
 
 }
 .box-period p {
-  font-size: 1rem;
+  font-size: 2rem;
   margin: 5px 0;
   font-weight: bold;
 }
 .container-bottom {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  display: flex
+  ;
+      justify-content: center;
+      gap: 20px;
+      top: 20px;
+      position: relative;
 }
 
 
@@ -379,14 +384,14 @@ body{
   text-align: center;
   background-color: #ff3b00;
   color: #fff;
-  font-size: 1rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
   position: relative;
-  top: 136px;
+  top: 260px;
 }
 
 .reserveButton:hover {
@@ -397,20 +402,21 @@ body{
 
 .judul {
   text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 2.7em;
+  font-weight: 1000;
+  
 }
 
 .body-isi {
-  /* font-family: Arial, sans-serif; */
   background-color: #f8f8f8;
   margin: 0;
-  display: flex;
+  display: flex
+;
   justify-content: center;
   align-items: center;
   height: 76vh;
   flex-direction: column;
-  top: 110px;
+  top: 159px;
   position: relative;
 }
 
