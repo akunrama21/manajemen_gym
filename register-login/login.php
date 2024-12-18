@@ -19,6 +19,7 @@ if (isset($_POST["register"])) { // Ubah 'register' menjadi 'login'
     if ($result->num_rows > 0) {
         $data = $result->fetch_assoc();
         $_SESSION['email'] = $data['Email']; // Simpan email ke session
+        $_SESSION['nama'] = $data['Nama']; // Simpan nama ke session
         header("Location: ../profil/index.php"); // Redirect ke halaman profil
         exit();
     } else {
@@ -48,20 +49,41 @@ if (isset($_POST["register"])) { // Ubah 'register' menjadi 'login'
         <div class="container">
             <a href="../index.html" class="logo">
                 <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
-                <span class="span"> Singosari Fitness</span>
+                <span class="span" style="
+    padding-left: 7px;
+"> Singosari Fitness</span>
             </a>
             <nav class="navbar" data-navbar>
+
                 <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-                    <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+                <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
                 </button>
+
                 <ul class="navbar-list">
-                    <li><a href="#home" class="navbar-link active" data-nav-link>Beranda</a></li>
-                    <li><a href="#about" class="navbar-link" data-nav-link>Tentang Kami</a></li>
-                    <li><a href="#class" class="navbar-link" data-nav-link>Kelas</a></li>
-                    <li><a href="#blog" class="navbar-link" data-nav-link>Blog</a></li>
-                    <li><a href="#" class="navbar-link" data-nav-link>Hubungi Kami</a></li>
+
+                <li>
+                    <a href="../index.html" class="navbar-link active" data-nav-link>Beranda</a>
+                </li>
+
+                <li>
+                    <a href="../index.html#tentangkami" class="navbar-link" data-nav-link>Tentang Kami</a>
+                </li>
+
+                <li>
+                    <a href="../index.html#program" class="navbar-link" data-nav-link>Program</a>
+                </li>
+
+                <li>
+                    <a href="../index.html#trainer" class="navbar-link" data-nav-link>Trainer</a>
+                </li>
+
+                <li>
+                    <a href="../index.html#hubungi" class="navbar-link" data-nav-link>Hubungi Kami</a>
+                </li>
+
                 </ul>
-            </nav>
+
+                </nav>
             <a href="reg_login/index.php" class="btn btn-secondary">DAFTAR / LOGIN</a>
             <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
                 <span class="line"></span>

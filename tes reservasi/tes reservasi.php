@@ -1,212 +1,86 @@
+<?php
+// Ambil semua data loker dari database
+include "../service/database.php";
+
+$query = "SELECT * FROM Loker";
+$result = mysqli_query($db, $query);
+
+// Proses reservasi jika form disubmit
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $date = $_POST['date'];
+    $startTime = $_POST['startTime'];
+    $endTime = $_POST['endTime'];
+    $selectedLockers = $_POST['lockers']; // Array dari loker yang dipilih
+
+    // Validasi input
+    if (empty($date) || empty($startTime) || empty($endTime) || empty($selectedLockers)) {
+        $message = "Semua field harus diisi.";
+    } else {
+        // Update status loker menjadi 'Digunakan'
+        foreach ($selectedLockers as $lockerId) {
+            $updateQuery = "UPDATE Loker SET Status = 'Digunakan' WHERE ID_Loker = $lockerId";
+            mysqli_query($db, $updateQuery);
+        }
+        $message = "Reservasi berhasil pada $date dari $startTime hingga $endTime.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reservasi Loker Gym</title>
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>Register & Login</title>
-  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
-    rel="stylesheet">
-
-</head>
-
-<body>
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="#" class="logo">
-        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
-
-        <span class="span"> Singosari Fitness</span>
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
-        </button>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link active" data-nav-link>Beranda</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>Tentang Kami</a>
-          </li>
-
-          <li>
-            <a href="#class" class="navbar-link" data-nav-link>Kelas</a>
-          </li>
-
-          <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link" data-nav-link>Hubungi Kami</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <a href="reg_login/index.php" class="btn btn-secondary">DAFTAR / LOGIN</a>
-
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </button>
-
-    </div>
-  </header>
-
-
-
-
-  <div class="loker">
-    <h2>Reservasi Loker Gym</h2>
-
-    <div class="form-group">
-      <label for="name">Nama:</label>
-      <input type="text" id="name" required />
-    </div>
-
-    <div class="form-group">
-      <label for="date">Tanggal:</label>
-      <input type="date" id="date" required />
-    </div>
-
-    <div class="form-group">
-      <label for="startTime">Waktu Mulai:</label>
-      <input type="time" id="startTime" required />
-    </div>
-
-    <div class="form-group">
-      <label for="endTime">Waktu Selesai:</label>
-      <input type="time" id="endTime" required />
-    </div>
-    <div class="locker-grid" id="lockerGrid">
-      <!-- Loker akan diisi menggunakan JavaScript -->
-    </div>
-    <button id="reserveButton">Reservasi</button>
-    <div class="message" id="message"></div>
-  </div>
-
-  <script>
-    const lockerGrid = document.getElementById("lockerGrid");
-    const message = document.getElementById("message");
-    const reserveButton = document.getElementById("reserveButton");
-    const totalLockers = 50; // Total loker
-
-    // Membuat loker
-    for (let i = 1; i <= totalLockers; i++) {
-      const locker = document.createElement("div");
-      locker.classList.add("locker");
-      locker.textContent = `Loker ${i}`;
-      locker.dataset.index = i; // Simpan index loker
-      locker.dataset.reserved = "false"; // Status awal loker
-
-      locker.addEventListener("click", function () {
-        // Toggle pemilihan loker
-        if (locker.classList.contains("reserved")) {
-          message.textContent = "Loker ini sudah dipesan.";
-        } else {
-          // Batalkan semua loker yang dipilih
-          const selectedLockers = document.querySelectorAll(".locker.selected");
-          selectedLockers.forEach((selected) => {
-            selected.classList.remove("selected");
-            selected.dataset.reserved = "false";
-          });
-          // Tandai loker yang dipilih
-          locker.classList.toggle("selected");
-          locker.dataset.reserved = locker.classList.contains("selected") ? "true" : "false";
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservasi Loker Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .locker {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
         }
-      });
+        .locker.reserved {
+            background-color: #d3d3d3; /* Warna abu-abu untuk loker yang digunakan */
+            cursor: not-allowed; /* Mengubah kursor untuk menunjukkan bahwa loker tidak dapat dipilih */
+        }
+    </style>
+</head>
+<body>
+    <div class="loker">
+        <h2>Reservasi Loker Gym</h2>
 
-      lockerGrid.appendChild(locker);
-    }
+        <?php if (isset($message)) { echo "<div class='message'>$message</div>"; } ?>
 
-    // Menangani klik tombol reservasi
-    reserveButton.addEventListener("click", function () {
-      const name = document.getElementById("name").value.trim(); // Menghilangkan spasi di awal/akhir
-      const date = document.getElementById("date").value;
-      const startTime = document.getElementById("startTime").value;
-      const endTime = document.getElementById("endTime").value;
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="date">Tanggal:</label>
+                <input type="date" id="date" name="date" required />
+            </div>
 
-      // Validasi input
-      if (!name) {
-        message.textContent = "Nama tidak boleh kosong.";
-        return;
-      }
-      if (!date) {
-        message.textContent = "Tanggal tidak boleh kosong.";
-        return;
-      }
-      if (!startTime) {
-        message.textContent = "Waktu mulai tidak boleh kosong.";
-        return;
-      }
-      if (!endTime) {
-        message.textContent = "Waktu selesai tidak boleh kosong.";
-        return;
-      }
+            <div class="form-group">
+                <label for="startTime">Waktu Mulai:</label>
+                <input type="time" id="startTime" name="startTime" required />
+            </div>
 
-      // Cek apakah ada loker yang dipilih
-      const selectedLockers = document.querySelectorAll(".locker.selected");
-      if (selectedLockers.length === 0) {
-        message.textContent = "Silakan pilih loker terlebih dahulu.";
-        return;
-      }
+            <div class="form-group">
+                <label for="endTime">Waktu Selesai:</label>
+                <input type="time" id="endTime" name="endTime" required />
+            </div>
 
-      // Proses reservasi
-      selectedLockers.forEach((locker) => {
-        locker.classList.add("reserved");
-        locker.classList.remove("selected");
-        locker.dataset.reserved = "true";
-      });
+            <div class="locker-grid">
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <div class="locker <?php echo $row['Status'] == 'Digunakan' ? 'reserved' : ''; ?>">
+                        <input type="checkbox" id="locker<?php echo $row['ID_Loker']; ?>" name="lockers[]" value="<?php echo $row['ID_Loker']; ?>" <?php echo $row['Status'] == 'Digunakan' ? 'disabled' : ''; ?> />
+                        <label for="locker<?php echo $row['ID_Loker']; ?>">Loker <?php echo $row['ID_Loker']; ?></label>
+                    </div>
+                <?php } ?>
+            </div>
 
-      message.textContent = `Reservasi berhasil untuk ${name} pada ${date} dari ${startTime} hingga ${endTime}.`;
-
-      // Reset form
-      document.getElementById("name").value = "";
-      document.getElementById("date").value = "";
-      document.getElementById("startTime").value = "";
-      document.getElementById("endTime").value = "";
-    });
-  </script>
-
-
-
-  <script src="script.js" defer></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <button class=btn type="submit">Reservasi</button>
+        </form>
+    </div>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
 </html>

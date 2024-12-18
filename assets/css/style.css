@@ -638,7 +638,10 @@ body {
   #CLASS
 \*-----------------------------------*/
 
-.class { padding-block-start: calc(var(--section-padding) + 1px); }
+.class { 
+  padding-block-start: calc(var(--section-padding) + 1px); 
+  padding-bottom: 0PX;
+}
 
 .class .section-subtitle { margin-inline: auto; }
 

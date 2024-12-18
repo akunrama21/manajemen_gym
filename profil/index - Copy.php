@@ -50,7 +50,7 @@ $nama = $_SESSION['nama'];
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register & Login</title>
+  <title>Profil Pelanggan</title>
   <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -61,115 +61,76 @@ $nama = $_SESSION['nama'];
     rel="stylesheet">
 </head>
 
-
-<id="top">
+<body id="top">
   <header class="header" data-header>
     <div class="container">
-
       <a href="../index.html" class="logo">
         <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
-
-        <span class="span"> Singosari Fitness</span>
+        <span class="span" style="padding-left: 7px;"> Singosari Fitness</span>
       </a>
-
       <nav class="navbar" data-navbar>
-
         <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
           <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
         </button>
-
         <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link active" data-nav-link>Beranda</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>Tentang Kami</a>
-          </li>
-
-          <li>
-            <a href="#class" class="navbar-link" data-nav-link>Kelas</a>
-          </li>
-
-          <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link" data-nav-link>Hubungi Kami</a>
-          </li>
-
+          <li><a href="../index.html" class="navbar-link active" data-nav-link>Beranda</a></li>
+          <li><a href="../index.html#tentangkami" class="navbar-link" data-nav-link>Tentang Kami</a></li>
+          <li><a href="../index.html#program" class="navbar-link" data-nav-link>Program</a></li>
+          <li><a href="../index.html#trainer" class="navbar-link" data-nav-link>Trainer</a></li>
+          <li><a href="../index.html#hubungi" class="navbar-link" data-nav-link>Hubungi Kami</a></li>
         </ul>
-
       </nav>
-
       <a href="reg_login/index.php" class="btn btn-secondary">DAFTAR / LOGIN</a>
-
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
       </button>
-
     </div>
   </header>
 
   <div class="body-isi">
-  <div class="judul">PROFIL PENGGUNA</div>
+    <div class="judul" style="
+    padding-top: 360px;
+">Profil</div>
+    <div class="container-content">
+      <!-- Box Kiri -->
+      <div class="box box-dark">
+        <span class="title">Nama</span> <span><?php echo htmlspecialchars($nama); ?></span><br>
 
-  <!-- Box Kiri -->
-  <div class="box box-dark">
-    <?php
-    // Ambil satu baris data dari hasil query
-    $row = $result->fetch_assoc();
+        <?php
+        // Ambil satu baris data dari hasil query
+        $row = $result->fetch_assoc();
 
-    // Cek apakah $row tidak kosong
-    if ($row) {
-      ?>
-      <span class="title">Nama</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($nama); ?></span><br>
+        // Cek apakah $row tidak kosong
+        if ($row) {
+          echo "<span class='title'>Program</span> <span>" . htmlspecialchars($row["Nama_Program"]) . "</span><br>";
+          echo "<span class='title'>Jenis Periode</span> <span>" . htmlspecialchars($row["Jenis_Periode"]) . "</span><br>";
+          echo "<span class='title'>Trainer</span> <span>" . htmlspecialchars($row["Nama_Trainer"]) . "</span><br>";
+          echo "<span class='title'>Status Member</span> <span>" . htmlspecialchars($row["Status_Member"]) . "</span><br>";
+          echo "<span class='title'>Tanggal Mulai</span> <span>" . htmlspecialchars($row["Tanggal_Mulai"]) . "</span><br>";
+          echo "<span class='title'>Tanggal Berakhir</span> <span>" . htmlspecialchars($row["Tanggal_Berakhir"]) . "</span><br><br>";
+        } else {
+          echo "Tidak ada data ditemukan.";
+        }
+        ?>
+      </div>
 
-<span class="title">Program</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($row["Nama_Program"]); ?></span><br>
-
-<span class="title">Paket Langganan</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($row["Jenis_Periode"]); ?></span><br>
-
-<span class="title">Trainer</span> 
-<span style="position: relative; top: -25px;"><?php echo htmlspecialchars($row["Nama_Trainer"]); ?></span><br>
-    <?php
-    } else {
-      echo "Tidak ada data ditemukan.";
-    }
-    ?>
-  </div>
-
-  <!-- Container untuk box status member dan periode langganan -->
-  <div class="container-bottom">
-    <!-- Box Status Member -->
-    <div class="box box-light box-status">
-      <div class="title">Status Member</div>
-      <div class="status"><?php echo isset($row) ? htmlspecialchars($row["Status_Member"]) : 'Tidak ada data'; ?></div>
+      <!-- Box Kanan -->
+      <div class="box box-light">
+        <div class="title">Status Member</div>
+        <div class="status"><?php echo htmlspecialchars($row["Status_Member"]); ?></div>
+        <p>Periode Langganan</p>
+        <p><?php echo htmlspecialchars($row["Tanggal_Mulai"]); ?> -
+          <?php echo htmlspecialchars($row["Tanggal_Berakhir"]); ?>
+        </p>
+      </div>
     </div>
-
-    <!-- Box Periode Langganan -->
-    <div class="box box-light box-period">
-      <div class="title">Periode Langganan</div>
-      <p>
-        <?php 
-        echo isset($row) ? htmlspecialchars($row["Tanggal_Mulai"]) : 'Tidak ada data'; ?> sampai 
-        <?php echo isset($row) ? htmlspecialchars($row["Tanggal_Berakhir"]) : 'Tidak ada data'; ?>
-      </p>
-    </div>
+ 
   </div>
-</div>
-
 
   </div>
   <a href="../tes reservasi/tes reservasi.php" class="reserveButton">Reservasi</a>
-
-
 
   <script src="script.js" defer></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

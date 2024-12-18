@@ -253,6 +253,24 @@ body {
 .header .btn {
   display: none;
 }
+.btn{
+  font-size:1.1rem;
+  padding:8px 0;
+  border-radius:5px;
+  outline:none;
+  border:none;
+  width:100%;
+  background:#fd3d0d;
+  color:white;
+  cursor:pointer;
+  transition:0.9s;
+}
+.btn:hover{
+  background:lightsalmon;
+
+}
+
+
 
 .header {
   background-color: var(--rich-black-fogra-29-1);

@@ -121,10 +121,11 @@
   }
   
   body {
-    background-color: var(--white);
-    color: var(--sonic-silver);
-    font-size: 1.6rem;
-    line-height: 1.6;
+    font-family: 'Catamaran', sans-serif;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
   }
   
   :focus-visible { outline-offset: 4px; }
@@ -305,72 +306,97 @@ body{
 
 .container-content {
   display: flex;
-  gap: 41px;
+  justify-content: center;
+  gap: 20px;
+
 }
 
 .box {
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .box-dark {
-  background-color: #1a1a1a;
-  color: white;
-  width: 355px;
-  display: grid;
-  grid-template-columns: 150px auto;
-  row-gap: 17px;
-  
-}
+  background-color: #111;
+  color: #fff;
+  margin-bottom: 15px; /* Beri jarak ke box bawah */
 
+}
+.box-dark span {
+  display: block;
+  text-align: right;
+  color: #ccc;
+}
 .box-dark .title {
-  color: var(--coquelicot);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+  color: red;
+  font-weight: bold;
 }
 
 .box-light {
-  background-color: var(--coquelicot);
-  color: white;
+  background-color: #ff3b00; /* Warna oranye */
+  color: #fff;
   text-align: center;
-  width: 355px;
+  width: 140px;
 }
 
 .box-light .title {
-  font-weight: bold;
-  font-size: 1.5em;
+  font-size: 16;
+  margin: 5px 0;
+  font-weight: normal;
 }
 
 .box-light .status {
-  font-size: 2em;
+  font-size: 1.8rem;
   font-weight: bold;
   margin: 10px 0;
+  color: #33ff33;
+
 }
-
-
-
-.reserveButton{
-  width: 100%;
-  padding: 10px;
-  background-color: #f15a24;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+.box-period p {
+  font-size: 1rem;
+  margin: 5px 0;
   font-weight: bold;
-  text-transform: uppercase;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  text-align: center;
+}
+.container-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
+
+/* Tombol reservasi */
+.reserveButton {
+  display: block;
+  margin: 0px auto 0;
+  width: 200px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #ff3b00;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  position: relative;
+  top: 136px;
+}
+
+.reserveButton:hover {
+  background-color: #d63400; /* Warna tombol saat hover */
+}
 
 
 
 .judul {
   text-align: center;
-  margin-bottom: 50px;
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -382,8 +408,10 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 76vh;
   flex-direction: column;
+  top: 110px;
+  position: relative;
 }
 
 
